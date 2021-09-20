@@ -1,12 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 
 function App() {
-    const [counterStrawberries, setCounterStrawberries] = React.useState(0);
-    const [counterBananas, setCounterBananas] = React.useState(0);
-    const [counterApples, setCounterApples] = React.useState(0);
-    const [counterKiwis, setCounterKiwis] = React.useState(0);
+    // useState hooks voor opdracht 1
+    const [counterStrawberries, setCounterStrawberries] = useState(0);
+    const [counterBananas, setCounterBananas] = useState(0);
+    const [counterApples, setCounterApples] = useState(0);
+    const [counterKiwis, setCounterKiwis] = useState(0);
 
+    // useState hooks voor opdracht 2
+    const [formFirstName, setFormFirstName] = useState('');
+    const [formLastName, setFormLastName] = useState('');
+    const [formAge, setFormAge] = useState(0);
+    const [formZipCode, setFormZipCode] = useState('');
+    const [formDeliveryFrequency, setFormDeliveryFrequency] = useState('weekly')
+    const [formDuringDay, toggleFormDuringDay] = useState(false);
+    const [formInEvening, toggleFormInEvening] = useState(false);
+    const [formRemarks, setFormRemarks] = useState('');
+    const [formTermsAndConditions, toggleFormTermsAndConditions] = useState(false);
+
+
+    // functies voor opdracht 1
     function decreaseCounterStrawberries() {
         if (counterStrawberries > 0) setCounterStrawberries(counterStrawberries - 1);
     }
@@ -28,6 +42,14 @@ function App() {
         setCounterBananas(counterBananas - counterBananas);
         setCounterApples(counterApples - counterApples);
         setCounterKiwis(counterKiwis - counterKiwis);
+    }
+
+    // functies voor opdracht 2
+    function handleSubmit(e) {
+        e.preventDefault();
+        console.log(counterStrawberries, counterBananas, counterApples, counterKiwis,
+            formFirstName, formLastName, formAge, formZipCode, formDeliveryFrequency,
+            formInEvening, formRemarks, formTermsAndConditions);
     }
 
     return (
