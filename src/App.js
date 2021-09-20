@@ -6,7 +6,6 @@ function App() {
     const [counterBananas, setCounterBananas] = React.useState(0);
     const [counterApples, setCounterApples] = React.useState(0);
     const [counterKiwis, setCounterKiwis] = React.useState(0);
-    // const [allCounters, setAllCounters] = React.useState(0);
 
     function decreaseCounterStrawberries() {
         if (counterStrawberries > 0) setCounterStrawberries(counterStrawberries - 1);
