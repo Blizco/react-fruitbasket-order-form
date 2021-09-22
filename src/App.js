@@ -46,9 +46,10 @@ function App() {
     // functies voor opdracht 2
     function handleSubmit(e) {
         e.preventDefault();
-        console.log(counterStrawberries, counterBananas, counterApples, counterKiwis,
-            formFirstName, formLastName, formAge, formZipCode, formDeliveryFrequency,
-            formDayOrEvening, formRemarks, formTermsAndConditions);
+        console.log(`Aardbeien: ${counterStrawberries}, Bananen: ${counterBananas}, Appels: ${counterApples},
+         Kiwi's: ${counterKiwis}, Voornaam: ${formFirstName}, Achternaam: ${formLastName}, Leeftijd: ${formAge},
+         Postcode: ${formZipCode}, Bezorgfrequentie: ${formDeliveryFrequency}, Overdag/'s Avonds: ${formDayOrEvening},
+         Opmerking: ${formRemarks}, Akkoord met voorwaarden: ${formTermsAndConditions}`);
     }
 
     return (
@@ -56,7 +57,7 @@ function App() {
             <h1>Fruitmand bezorgservice</h1>
 
             {/*// Verder met Opdracht 1*/}
-
+            {/*Aardbeien teller*/}
             <nav className="strawberries">
                 <h1>🍓 Aardbeien
                     <button
@@ -75,6 +76,7 @@ function App() {
                 </h1>
             </nav>
 
+            {/*Bananen teller*/}
             <nav className="bananas">
                 <h1>🍌 Bananen
                     <button
@@ -93,6 +95,7 @@ function App() {
                 </h1>
             </nav>
 
+            {/*Appels teller*/}
             <nav className="apples">
                 <h1>🍏 Appels
                     <button
@@ -111,6 +114,7 @@ function App() {
                 </h1>
             </nav>
 
+            {/*Kiwi's teller*/}
             <nav className="kiwis">
                 <h1>🥝 Kiwi's
                     <button
@@ -129,6 +133,7 @@ function App() {
                 </h1>
             </nav>
 
+            {/*Reset knop*/}
             <button
                 className="reset-button"
                 type="reset"
@@ -139,6 +144,7 @@ function App() {
 
             {/*Verder met Opdracht 2*/}
             <form onSubmit={handleSubmit}>
+                {/*Invoerveld Voornaam*/}
                 <label htmlFor="form-first-name">
                     Voornaam
                     <input
@@ -150,6 +156,7 @@ function App() {
                     />
                 </label>
 
+                {/*Invoerveld Achternaam*/}
                 <label htmlFor="form-last-name">
                     Achternaam
                     <input
@@ -161,11 +168,12 @@ function App() {
                     />
                 </label>
 
+                {/*Invoerveld leeftijd (mag niet < 18 zijn om te mogen bestellen (zelf bedacht))*/}
                 <label htmlFor="form-age">
                     Leeftijd
                     <input
                         type="number"
-                        min="0"
+                        min="18"
                         name="age"
                         id="form-age"
                         value={formAge}
@@ -173,6 +181,7 @@ function App() {
                     />
                 </label>
 
+                {/*Invoerveld Postcode*/}
                 <label htmlFor="form-zip-code">
                     Postcode
                     <input
@@ -184,6 +193,7 @@ function App() {
                     />
                 </label>
 
+                {/*3 opties voor Bezorgfrequentie*/}
                 <label htmlFor="form-delivery-frequency">
                     Bezorgfrequentie
                 </label>
@@ -199,6 +209,7 @@ function App() {
                     </option>
                 </select>
 
+                {/*2 radiobuttons voor bezorgen overdag of s'avonds*/}
                 <span>
                     <label htmlFor="form-in-day-time">
                         <input
@@ -225,6 +236,7 @@ function App() {
                     </label>
                 </span>
 
+                {/*Invoerveld voor Opmerking*/}
                 <label htmlFor="form-remarks">
                     Opmerking
                     <textarea
@@ -238,6 +250,7 @@ function App() {
                     </textarea>
                 </label>
 
+                {/*Checkbox voor akkoord voorwaarden*/}
                 <label htmlFor="form-terms-and-conditions">
                     <input
                         type="checkbox"
@@ -253,6 +266,9 @@ function App() {
                     Verzend
                 </button>
             </form>
+
+        {/*  Opdracht 3*/}
+
         </>
     );
 }
