@@ -1,0 +1,73 @@
+main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+div {
+    width: 400px;
+    margin: 20px;
+}
+h1 {
+   margin-left: 20px;
+}
+
+button {
+    margin: 20px 20px;
+}
+
+.strawberries {
+    border: 2px solid gray;
+    border-radius: 10px;
+    padding-left: 20px;
+}
+
+.bananas {
+    border: 2px solid gray;
+    border-radius: 10px;
+    padding-left: 20px;
+
+}
+
+.apples {
+    border: 2px solid gray;
+    border-radius: 10px;
+    padding-left: 20px;
+
+}
+
+.kiwis {
+    border: 2px solid gray;
+    border-radius: 10px;
+    padding-left: 20px;
+
+}
+
+.reset-button {
+    width: 400px;
+    height: 50px;
+    margin: 5px 20px 20px 20px;
+}
+
+label {
+    display: block;
+    margin: 20px 20px;
+}
+
+select {
+    margin: 0 20px 0 20px;
+}
+
+input {
+    margin: 0 0 0 8px;
+}
+
+span {
+    display: flex;
+    flex-direction: row;
+}
+
+textarea {
+    margin: 8px 0 0 0;
+    display: block;
+}
