@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import './App.css';
 
 function App() {
@@ -13,9 +13,8 @@ function App() {
     const [formLastName, setFormLastName] = useState('');
     const [formAge, setFormAge] = useState(0);
     const [formZipCode, setFormZipCode] = useState('');
-    const [formDeliveryFrequency, setFormDeliveryFrequency] = useState('weekly')
-    const [formDuringDay, toggleFormDuringDay] = useState(false);
-    const [formInEvening, toggleFormInEvening] = useState(false);
+    const [formDeliveryFrequency, setFormDeliveryFrequency] = useState('weekly');
+    const [formDayOrEvening, setFormDayOrEvening] = useState('In the daytime')
     const [formRemarks, setFormRemarks] = useState('');
     const [formTermsAndConditions, toggleFormTermsAndConditions] = useState(false);
 
@@ -49,12 +48,14 @@ function App() {
         e.preventDefault();
         console.log(counterStrawberries, counterBananas, counterApples, counterKiwis,
             formFirstName, formLastName, formAge, formZipCode, formDeliveryFrequency,
-            formInEvening, formRemarks, formTermsAndConditions);
+            formDayOrEvening, formRemarks, formTermsAndConditions);
     }
 
     return (
         <>
             <h1>Fruitmand bezorgservice</h1>
+
+            {/*// Verder met Opdracht 1*/}
 
             <nav className="strawberries">
                 <h1>🍓 Aardbeien
@@ -130,15 +131,130 @@ function App() {
 
             <button
                 className="reset-button"
-                type="button"
+                type="reset"
                 onClick={resetAllCounters}
             >
                 <h3>Reset</h3>
             </button>
 
+            {/*Verder met Opdracht 2*/}
+            <form onSubmit={handleSubmit}>
+                <label htmlFor="form-first-name">
+                    Voornaam
+                    <input
+                        type="text"
+                        name="first-name"
+                        id="form-first-name"
+                        value={formFirstName}
+                        onChange={(e) => setFormFirstName(e.target.value)}
+                    />
+                </label>
+
+                <label htmlFor="form-last-name">
+                    Achternaam
+                    <input
+                        type="text"
+                        name="last-name"
+                        id="form-last-name"
+                        value={formLastName}
+                        onChange={(e) => setFormLastName(e.target.value)}
+                    />
+                </label>
+
+                <label htmlFor="form-age">
+                    Leeftijd
+                    <input
+                        type="number"
+                        min="0"
+                        name="age"
+                        id="form-age"
+                        value={formAge}
+                        onChange={(e) => setFormAge(parseInt(e.target.value))}
+                    />
+                </label>
+
+                <label htmlFor="form-zip-code">
+                    Postcode
+                    <input
+                        type="text"
+                        name="zip-code"
+                        id="form-zip-code"
+                        value={formZipCode}
+                        onChange={(e) => setFormZipCode(e.target.value)}
+                    />
+                </label>
+
+                <label htmlFor="form-delivery-frequency">
+                    Bezorgfrequentie
+                </label>
+                <select name="delivery-frequency" id="form-delivery-frequency"
+                        value={formDeliveryFrequency}
+                        onChange={(e) => setFormDeliveryFrequency(e.target.value)}
+                >
+                    <option value="weekly">Iedere week
+                    </option>
+                    <option value="two-weekly">Om de week
+                    </option>
+                    <option value="monthly">Iedere maand
+                    </option>
+                </select>
+
+                <span>
+                    <label htmlFor="form-in-day-time">
+                        <input
+                            type="radio"
+                            name="day-or-evening"
+                            id="form-in-day-time"
+                            value="In the daytime"
+                            checked={formDayOrEvening === "In the daytime"}
+                            onChange={(e) => setFormDayOrEvening(e.target.value)}
+                        />
+                        Overdag
+                    </label>
+
+                    <label htmlFor="form-in-evening">
+                        <input
+                            type="radio"
+                            name="day-or-evening"
+                            id="form-in-evening"
+                            value="In the evening"
+                            checked={formDayOrEvening === "In the evening"}
+                            onChange={(e) => setFormDayOrEvening(e.target.value)}
+                        />
+                        's Avonds
+                    </label>
+                </span>
+
+                <label htmlFor="form-remarks">
+                    Opmerking
+                    <textarea
+                        name="remarks"
+                        id="form-remarks"
+                        cols="50"
+                        rows="8"
+                        value={formRemarks}
+                        onChange={(e) => setFormRemarks(e.target.value)}
+                    >
+                    </textarea>
+                </label>
+
+                <label htmlFor="form-terms-and-conditions">
+                    <input
+                        type="checkbox"
+                        name="terms-and-conditions"
+                        id="form-terms-and-conditions"
+                        checked={formTermsAndConditions}
+                        onChange={() => toggleFormTermsAndConditions(!formTermsAndConditions)}
+                    />
+                    Ik ga akkoord met de voorwaarden
+                </label>
+
+                <button type="submit">
+                    Verzend
+                </button>
+            </form>
         </>
-    )
-        ;
+    );
 }
 
 export default App;
