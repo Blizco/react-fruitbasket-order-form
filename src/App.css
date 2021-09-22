@@ -4,7 +4,7 @@ main {
     justify-content: center;
 }
 
-nav {
+div {
     width: 400px;
     margin: 20px;
 }
@@ -19,21 +19,28 @@ button {
 .strawberries {
     border: 2px solid gray;
     border-radius: 10px;
+    padding-left: 20px;
 }
 
 .bananas {
     border: 2px solid gray;
     border-radius: 10px;
+    padding-left: 20px;
+
 }
 
 .apples {
     border: 2px solid gray;
     border-radius: 10px;
+    padding-left: 20px;
+
 }
 
 .kiwis {
     border: 2px solid gray;
     border-radius: 10px;
+    padding-left: 20px;
+
 }
 
 .reset-button {

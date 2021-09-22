@@ -1,4 +1,6 @@
 import React, {useState} from 'react';
+import CounterButton from "./components/CounterButton";
+// import FruitCounter from "./components/FruitCounter";
 import './App.css';
 
 function App() {
@@ -11,7 +13,7 @@ function App() {
     // useState hooks voor opdracht 2
     const [formFirstName, setFormFirstName] = useState('');
     const [formLastName, setFormLastName] = useState('');
-    const [formAge, setFormAge] = useState(0);
+    const [formAge, setFormAge] = useState(18);
     const [formZipCode, setFormZipCode] = useState('');
     const [formDeliveryFrequency, setFormDeliveryFrequency] = useState('weekly');
     const [formDayOrEvening, setFormDayOrEvening] = useState('In the daytime')
@@ -58,82 +60,78 @@ function App() {
 
             {/*// Verder met Opdracht 1*/}
             {/*Aardbeien teller*/}
-            <nav className="strawberries">
-                <h1>🍓 Aardbeien
-                    <button
-                        type="button"
-                        onClick={decreaseCounterStrawberries}
+            <div className="strawberries">
+                <h2>🍓 Aardbeien
+                    <CounterButton
+                        clickHandler={decreaseCounterStrawberries}
                     >
                         -
-                    </button>
+                    </CounterButton>
                     {counterStrawberries}
-                    <button
-                        type="button"
-                        onClick={() => setCounterStrawberries(counterStrawberries + 1)}
+                    <CounterButton
+                        clickHandler={() => setCounterStrawberries(counterStrawberries + 1)}
                     >
                         +
-                    </button>
-                </h1>
-            </nav>
+                    </CounterButton>
+                </h2>
+            </div>
 
-            {/*Bananen teller*/}
-            <nav className="bananas">
-                <h1>🍌 Bananen
-                    <button
-                        type="button"
-                        onClick={decreaseCounterBananas}
+            {/*Bananen teller*/
+            }
+            <div className="bananas">
+                <h2>🍌 Bananen
+                    <CounterButton
+                        clickHandler={decreaseCounterBananas}
                     >
                         -
-                    </button>
+                    </CounterButton>
                     {counterBananas}
-                    <button
-                        type="button"
-                        onClick={() => setCounterBananas(counterBananas + 1)}
+                    <CounterButton
+                        clickHandler={() => setCounterBananas(counterBananas + 1)}
                     >
                         +
-                    </button>
-                </h1>
-            </nav>
+                    </CounterButton>
+                </h2>
+            </div>
 
-            {/*Appels teller*/}
-            <nav className="apples">
-                <h1>🍏 Appels
-                    <button
-                        type="button"
-                        onClick={decreaseCounterApples}
+            {/*Appels teller*/
+            }
+            <div className="apples">
+                <h2>🍏 Appels
+                    <CounterButton
+                        clickHandler={decreaseCounterApples}
                     >
                         -
-                    </button>
+                    </CounterButton>
                     {counterApples}
-                    <button
-                        type="button"
-                        onClick={() => setCounterApples(counterApples + 1)}
+                    <CounterButton
+                        clickHandler={() => setCounterApples(counterApples + 1)}
                     >
                         +
-                    </button>
-                </h1>
-            </nav>
+                    </CounterButton>
+                </h2>
+            </div>
 
-            {/*Kiwi's teller*/}
-            <nav className="kiwis">
-                <h1>🥝 Kiwi's
-                    <button
-                        type="button"
-                        onClick={decreaseCounterKiwis}
+            {/*Kiwi's teller*/
+            }
+            <div className="kiwis">
+                <h2>🥝 Kiwi's
+                    <CounterButton
+                        clickHandler={decreaseCounterKiwis}
                     >
                         -
-                    </button>
+                    </CounterButton>
                     {counterKiwis}
-                    <button
-                        type="button"
-                        onClick={() => setCounterKiwis(counterKiwis + 1)}
+                    <CounterButton
+                        clickHandler={() => setCounterKiwis(counterKiwis + 1)}
                     >
                         +
-                    </button>
-                </h1>
-            </nav>
+                    </CounterButton>
+                </h2>
+            </div>
 
-            {/*Reset knop*/}
+            {/*Reset knop*/
+            }
             <button
                 className="reset-button"
                 type="reset"
@@ -142,7 +140,8 @@ function App() {
                 <h3>Reset</h3>
             </button>
 
-            {/*Verder met Opdracht 2*/}
+            {/*Verder met Opdracht 2*/
+            }
             <form onSubmit={handleSubmit}>
                 {/*Invoerveld Voornaam*/}
                 <label htmlFor="form-first-name">
@@ -267,10 +266,12 @@ function App() {
                 </button>
             </form>
 
-        {/*  Opdracht 3*/}
+            {/*  Opdracht 3*/
+            }
 
         </>
-    );
+    )
+        ;
 }
 
 export default App;
